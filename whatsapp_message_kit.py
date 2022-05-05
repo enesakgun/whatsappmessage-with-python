@@ -1,9 +1,4 @@
 # -*- coding: utf-8 -*-
-"""
-Created on Thu May  5 16:09:17 2022
-
-@author: Enes Akgun
-"""
 
 import requests
 import urllib3
@@ -24,7 +19,7 @@ response.json()
 weather_id=response.json()['weather'][0]['id']
 weather=response.json()['weather'][0]['description']
 temperature=str(round(response.json()['main']['temp']))
-phone="+905334789340"
+phone="Phone Number"
 filepath = r"C:\Users\Enes Akgun\Images\sky.png"
 img = Image.open(filepath)
 msg_time=datetime.datetime.now() + datetime.timedelta(minutes = 1)
