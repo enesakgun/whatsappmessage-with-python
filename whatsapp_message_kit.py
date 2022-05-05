@@ -1,4 +1,8 @@
 # -*- coding: utf-8 -*-
+"""
+
+@author: Enes Akgun
+"""
 
 import requests
 import urllib3
@@ -19,14 +23,15 @@ response.json()
 weather_id=response.json()['weather'][0]['id']
 weather=response.json()['weather'][0]['description']
 temperature=str(round(response.json()['main']['temp']))
-phone="Phone Number"
+phone="+905334789340"
 filepath = r"C:\Users\Enes Akgun\Images\sky.png"
 img = Image.open(filepath)
 msg_time=datetime.datetime.now() + datetime.timedelta(minutes = 1)
 dakika=msg_time.strftime("%M")
 saat=msg_time.strftime("%H")  
 
-if weather_id==800 and ID == 745042: # Change this condition for your city id 
+
+if weather_id==800: # Change this condition for your city id 
     weather_condition='Istanbulda Hava Acik ve Gunesli, Yaklasik '+temperature+' derecedir'   
     #If only sending a message, use this code
     #pwt.sendwhatmsg(phone, weather_condition, int(saat),int(dakika)) 
@@ -34,6 +39,6 @@ if weather_id==800 and ID == 745042: # Change this condition for your city id
     time.sleep(2) 
     k.press_and_release('enter')
     pwt.sendwhats_image(phone,filepath,weather_condition)
-
-
-    
+else:
+    msg='Naber,Napiyon'
+    pwt.sendwhatmsg(msg, weather_condition, int(saat),int(dakika))  
