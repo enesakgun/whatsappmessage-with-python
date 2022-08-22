@@ -23,7 +23,7 @@ response.json()
 weather_id=response.json()['weather'][0]['id']
 weather=response.json()['weather'][0]['description']
 temperature=str(round(response.json()['main']['temp']))
-phone="+905334789340"
+phone="My Phone"
 filepath = r"C:\Users\Enes Akgun\Images\sky.png"
 img = Image.open(filepath)
 msg_time=datetime.datetime.now() + datetime.timedelta(minutes = 1)
